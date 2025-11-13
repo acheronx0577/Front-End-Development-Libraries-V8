@@ -65,7 +65,6 @@ git clone git@github.com:acheronx0577/Front-End-Development-Libraries-V8.git
 # Open any project folder
 ```
 cd Front-End-Development-Libraries-V8
-
 ```
 # Run in your browser
 ```
