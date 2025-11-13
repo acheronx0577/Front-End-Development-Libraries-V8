@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>jQuery Learning Playground</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="terminal">
+        <header class="terminal-header">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title-bar">
+                <span class="prompt">></span>
+                <span class="title">JQUERY_LEARNING_PLAYGROUND</span>
+                <span class="cursor">_</span>
+            </div>
+        </header>
+
+        <main class="terminal-body">
+            <div class="app-header">
+                <h1 class="app-title">~/learn/jquery/basics</h1>
+                <div class="status-bar">
+                    <span class="status-item">INTERACTIVE</span>
+                    <span class="status-item">v3.6.0</span>
+                    <span class="status-item">BEGINNER</span>
+                </div>
+            </div>
+
+            <!-- Lesson Selection -->
+            <div class="lesson-section">
+                <div class="lesson-header">
+                    <span class="lesson-title">SELECT_LESSON</span>
+                    <span class="lesson-desc">[click to load exercise]</span>
+                </div>
+                <div class="lesson-grid">
+                    <div class="lesson-card" data-lesson="1">
+                        <div class="lesson-icon">🎯</div>
+                        <div class="lesson-name">Select Elements</div>
+                        <div class="lesson-difficulty">BEGINNER</div>
+                    </div>
+                    <div class="lesson-card" data-lesson="2">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-name">Modify CSS</div>
+                        <div class="lesson-difficulty">BEGINNER</div>
+                    </div>
+                    <div class="lesson-card" data-lesson="3">
+                        <div class="lesson-icon">✨</div>
+                        <div class="lesson-name">Animations</div>
+                        <div class="lesson-difficulty">INTERMEDIATE</div>
+                    </div>
+                    <div class="lesson-card" data-lesson="4">
+                        <div class="lesson-icon">🖱️</div>
+                        <div class="lesson-name">Event Handling</div>
+                        <div class="lesson-difficulty">BEGINNER</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Editor -->
+            <div class="editor-section">
+                <div class="editor-header">
+                    <span class="editor-title">CODE_EDITOR</span>
+                    <span class="editor-status" id="editorStatus">READY</span>
+                </div>
+                <div class="editor-content">
+                    <div class="code-input">
+                        <label for="jqueryCode" class="input-label">
+                            <span class="label-text">ENTER_JQUERY_CODE</span>
+                            <span class="label-desc">[use $(selector).action() syntax]</span>
+                        </label>
+                        <textarea 
+                            id="jqueryCode" 
+                            class="terminal-textarea"
+                            placeholder="$('#target').css('color', 'red');"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="editor-controls">
+                        <button id="runCode" class="terminal-btn run-btn">
+                            <span class="btn-text">RUN_CODE</span>
+                        </button>
+                        <button id="resetCode" class="terminal-btn reset-btn">
+                            <span class="btn-text">RESET</span>
+                        </button>
+                        <button id="showExample" class="terminal-btn example-btn">
+                            <span class="btn-text">SHOW_EXAMPLE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output Panel -->
+            <div id="output" class="output-panel">
+                <div class="output-header">
+                    <span class="output-title">OUTPUT_RESULT</span>
+                    <span class="output-status" id="outputStatus">WAITING</span>
+                </div>
+                <div class="output-content">
+                    <div id="result" class="result-content">
+                        <div class="welcome-message">
+                            <div class="welcome-icon">🚀</div>
+                            <div class="welcome-text">
+                                <h3>Welcome to jQuery Learning Playground!</h3>
+                                <p>Select a lesson from above and start writing jQuery code.</p>
+                                <p>Try: <code>$('#target1').css('background', 'blue');</code></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playground Elements -->
+            <div class="playground-section">
+                <div class="playground-header">
+                    <span class="playground-title">PLAYGROUND_ELEMENTS</span>
+                    <span class="playground-desc">[modify these with jQuery]</span>
+                </div>
+                <div class="playground-content">
+                    <div class="element-group">
+                        <button class="playground-element target" id="target1">#target1</button>
+                        <button class="playground-element target" id="target2">#target2</button>
+                        <button class="playground-element target" id="target3">#target3</button>
+                    </div>
+                    <div class="element-group">
+                        <div class="playground-element box" id="box1">.box1</div>
+                        <div class="playground-element box" id="box2">.box2</div>
+                        <div class="playground-element box" id="box3">.box3</div>
+                    </div>
+                    <div class="element-group">
+                        <input type="text" class="playground-element input-field" id="textInput" placeholder="Type something...">
+                        <button class="playground-element" id="actionBtn">Click Me!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson Info -->
+            <div class="info-panel">
+                <div class="info-header">
+                    <span class="info-title">LESSON_INFORMATION</span>
+                </div>
+                <div class="info-content">
+                    <div id="lessonInfo" class="lesson-info">
+                        <div class="info-default">
+                            <h4>jQuery Basics</h4>
+                            <p>jQuery is a fast, small JavaScript library that simplifies HTML document traversal, manipulation, event handling, and animation.</p>
+                            <p><strong>Basic Syntax:</strong> <code>$(selector).action()</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="terminal-footer">
+            <div class="footer-stats">
+                <span class="stat">STATUS: <span class="highlight" id="globalStatus">READY</span></span>
+                <span class="stat">LESSON: <span class="highlight" id="currentLesson">NONE</span></span>
+                <span class="stat">LEVEL: <span class="highlight">BEGINNER</span></span>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
