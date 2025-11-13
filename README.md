@@ -22,12 +22,12 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 | Course | Status | GitHub Repo | Live Demo |
 |--------|--------|-------------|-----------|
-| **Bootstrap** | ✅ 31/31 | [🔗 Repo](https://github.com/acheronx0577/Bootstrap) | 🌐 [Live](https://acheronx0577.github.io/Bootstrap) |
-| **jQuery** | ✅ 18/18 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **SASS** | ✅ 0/9 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **React** | ✅ 0/47 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **Redux** | ✅ 0/17 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **React and Redux** | ✅ 0/10 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **Bootstrap** | ✅ 31/31 | 🔗 [Repo](https://github.com/acheronx0577/Bootstrap) | 🌐 [Live](https://acheronx0577.github.io/Bootstrap) |
+| **jQuery** | ✅ 18/18 | 🔗 [Repo](#) | 🌐 [Live](#) |
+| **SASS** | ✅ 0/9 | 🔗 [Repo](#) | 🌐 [Live](#) |
+| **React** | ✅ 0/47 | 🔗 [Repo](#) | 🌐 [Live](#) |
+| **Redux** | ✅ 0/17 | 🔗 [Repo](#) | 🌐 [Live](#) |
+| **React and Redux** | ✅ 0/10 | 🔗 [Repo](#) | 🌐 [Live](#) |
 
 ---
 
@@ -38,7 +38,7 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 | **Random Quote Machine** | Build a Random Quote Machine | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 | **Markdown Previewer** | Build a Markdown Previewer | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 | **Drum Machine** | Build a Drum Machine | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
-| **JavaScript Calculator** | Build a JavaScript Calculator | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **JavaScript Calculator** | Build a JavaScript Calculator | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 | **25 + 5 Clock** | Build a 25 + 5 Clock | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 
 ---
