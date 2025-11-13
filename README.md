@@ -22,7 +22,7 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 | Course | Status | GitHub Repo | Live Demo |
 |--------|--------|-------------|-----------|
-| **Bootstrap** | ✅ 31/31 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **Bootstrap** | ✅ 31/31 | [🔗 Repo](https://github.com/acheronx0577/Bootstrap) | 🌐 [Live](https://acheronx0577.github.io/Bootstrap) |
 | **jQuery** | ✅ 18/18 | [🔗 Repo](#) | 🌐 [Live](#) |
 | **SASS** | ✅ 0/9 | [🔗 Repo](#) | 🌐 [Live](#) |
 | **React** | ✅ 0/47 | [🔗 Repo](#) | 🌐 [Live](#) |
