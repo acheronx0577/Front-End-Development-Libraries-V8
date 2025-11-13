@@ -3,7 +3,6 @@ $(document).ready(function() {
     // State management
     let currentLesson = null;
     let isRunning = false;
-    let messageTimeout = null;
 
     // DOM elements
     const $runBtn = $('#runCode');
@@ -99,9 +98,14 @@ $(document).ready(function() {
             }
         });
 
-        // Note: No built-in event handlers on playground elements
-        // This allows users to freely experiment with event handling in Lesson 4
-        // without interference from competing handlers
+        // Demo event handlers for playground elements
+        $('#actionBtn').on('click', function() {
+            showMessage('Button clicked! Try handling this with jQuery.', 'info');
+        });
+
+        $('#textInput').on('input', function() {
+            // Demo input handling
+        });
     }
 
     // Select a lesson
@@ -148,11 +152,11 @@ $(document).ready(function() {
         isRunning = true;
         updateStatus('EXECUTING', 'warning');
         
-        // Store original console.log before try block
-        const originalLog = console.log;
-        let output = '';
-        
         try {
+            // Store original console.log
+            const originalLog = console.log;
+            let output = '';
+            
             // Override console.log to capture output
             console.log = function(...args) {
                 output += args.join(' ') + '\n';
@@ -162,6 +166,9 @@ $(document).ready(function() {
             // Execute the code
             const result = eval(code);
             
+            // Restore console.log
+            console.log = originalLog;
+            
             // Display results
             displayResult(code, result, output);
             updateStatus('SUCCESS', 'success');
@@ -170,8 +177,6 @@ $(document).ready(function() {
             displayError(code, error);
             updateStatus('ERROR', 'error');
         } finally {
-            // Always restore console.log in finally block
-            console.log = originalLog;
             isRunning = false;
         }
     }
@@ -253,35 +258,14 @@ $(document).ready(function() {
 
     // Reset playground
     function resetPlayground() {
-        // Store original text content for buttons that don't follow ID pattern
-        const originalButtonTexts = {
-            'actionBtn': 'Click Me!',
-            'target1': '#target1',
-            'target2': '#target2',
-            'target3': '#target3'
-        };
-        
-        // Store original text for box elements
-        const originalBoxTexts = {
-            'box1': '.box1',
-            'box2': '.box2',
-            'box3': '.box3'
-        };
-        
-        // Reset all playground elements by ID to avoid relying on classes
-        const elementIds = ['target1', 'target2', 'target3', 'box1', 'box2', 'box3', 'textInput', 'actionBtn'];
-        
-        elementIds.forEach(function(id) {
-            const $el = $('#' + id);
-            if ($el.length === 0) return; // Element doesn't exist
+        // Reset all playground elements
+        $('.playground-element').each(function() {
+            const $el = $(this);
+            const id = $el.attr('id');
             
-            // Check DOM node type instead of classes (more reliable)
-            const nodeName = $el[0].nodeName.toLowerCase();
-            
-            if (nodeName === 'button') {
-                // Use original text if available, otherwise use ID pattern
-                const originalText = originalButtonTexts[id];
-                $el.text(originalText !== undefined ? originalText : '#' + id);
+            // Reset based on element type
+            if ($el.is('button')) {
+                $el.text('#' + id);
                 $el.css({
                     'background': '',
                     'color': '',
@@ -290,10 +274,8 @@ $(document).ready(function() {
                     'opacity': '',
                     'display': ''
                 });
-            } else if (nodeName === 'div' && id.startsWith('box')) {
-                // Box elements are divs with IDs starting with 'box'
-                const originalText = originalBoxTexts[id];
-                $el.text(originalText !== undefined ? originalText : '.' + id);
+            } else if ($el.is('.box')) {
+                $el.text('.' + id);
                 $el.css({
                     'background': '',
                     'color': '',
@@ -303,7 +285,7 @@ $(document).ready(function() {
                     'opacity': '',
                     'display': ''
                 });
-            } else if (nodeName === 'input') {
+            } else if ($el.is('input')) {
                 $el.val('');
                 $el.css({
                     'background': '',
@@ -341,12 +323,6 @@ $(document).ready(function() {
     }
 
     function showMessage(message, type = 'info') {
-        // Clear any existing timeout to prevent overwriting messages
-        if (messageTimeout) {
-            clearTimeout(messageTimeout);
-            messageTimeout = null;
-        }
-        
         // Create temporary message
         const messageHtml = `
             <div class="message ${type}">
@@ -360,10 +336,8 @@ $(document).ready(function() {
         
         // Auto-remove after 3 seconds if it's just an info message
         if (type === 'info') {
-            messageTimeout = setTimeout(() => {
-                // Only replace if the current message is still an info message
-                const currentMessage = $result.find('.message.info');
-                if (currentMessage.length) {
+            setTimeout(() => {
+                if ($result.find('.message').length) {
                     $result.html(`
                         <div class="welcome-message">
                             <div class="welcome-icon">💡</div>
@@ -374,7 +348,6 @@ $(document).ready(function() {
                         </div>
                     `);
                 }
-                messageTimeout = null;
             }, 3000);
         }
     }
