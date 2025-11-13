@@ -35,11 +35,11 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 | Project | Description | GitHub Repo | Live Demo | Status |
 |---------|-------------|-------------|-----------|--------|
-| **Random Quote Machine** | Build a Random Quote Machine | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
-| **Markdown Previewer** | Build a Markdown Previewer | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
-| **Drum Machine** | Build a Drum Machine | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **Random Quote Machine** | Build a Random Quote Machine | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **Markdown Previewer** | Build a Markdown Previewer | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **Drum Machine** | Build a Drum Machine | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 | **JavaScript Calculator** | Build a JavaScript Calculator | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
-| **25 + 5 Clock** | Build a 25 + 5 Clock | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **25 + 5 Clock** | Build a 25 + 5 Clock | 🔗 [Repo](#) | 🌐 [Live](#) | ✅ Completed |
 
 ---
 
