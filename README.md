@@ -33,13 +33,13 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 ## 🎯 Certification Projects
 
-| Project | Description | Live Demo | Status |
-|---------|-------------|-----------|--------|
-| **Random Quote Machine** | Build a Random Quote Machine | 🌐 [Live](#) | ✅ Completed |
-| **Markdown Previewer** | Build a Markdown Previewer | 🌐 [Live](#) | ✅ Completed |
-| **Drum Machine** | Build a Drum Machine | 🌐 [Live](#) | ✅ Completed |
-| **JavaScript Calculator** | Build a JavaScript Calculator | 🌐 [Live](#) | ✅ Completed |
-| **25 + 5 Clock** | Build a 25 + 5 Clock | 🌐 [Live](#) | ✅ Completed |
+| Project | Description | GitHub Repo | Live Demo | Status |
+|---------|-------------|-------------|-----------|--------|
+| **Random Quote Machine** | Build a Random Quote Machine | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **Markdown Previewer** | Build a Markdown Previewer | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **Drum Machine** | Build a Drum Machine | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **JavaScript Calculator** | Build a JavaScript Calculator | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
+| **25 + 5 Clock** | Build a 25 + 5 Clock | [🔗 Repo](#) | 🌐 [Live](#) | ✅ Completed |
 
 ---
 
