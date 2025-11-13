@@ -22,12 +22,12 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 | Course | Status | GitHub Repo | Live Demo |
 |--------|--------|-------------|-----------|
-| **Bootstrap** | ⭕ 31/31 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **jQuery** | ⭕ 18/18 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **SASS** | ⭕ 0/9 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **React** | ⭕ 0/47 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **Redux** | ⭕ 0/17 | [🔗 Repo](#) | 🌐 [Live](#) |
-| **React and Redux** | ⭕ 0/10 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **Bootstrap** | ✅ 31/31 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **jQuery** | ✅ 18/18 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **SASS** | ✅ 0/9 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **React** | ✅ 0/47 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **Redux** | ✅ 0/17 | [🔗 Repo](#) | 🌐 [Live](#) |
+| **React and Redux** | ✅ 0/10 | [🔗 Repo](#) | 🌐 [Live](#) |
 
 ---
 
@@ -35,11 +35,11 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 | Project | Description | Live Demo | Status |
 |---------|-------------|-----------|--------|
-| **Random Quote Machine** | Build a Random Quote Machine | 🌐 [Live](#) | ⭕ |
-| **Markdown Previewer** | Build a Markdown Previewer | 🌐 [Live](#) | ⭕ |
-| **Drum Machine** | Build a Drum Machine | 🌐 [Live](#) | ⭕ |
-| **JavaScript Calculator** | Build a JavaScript Calculator | 🌐 [Live](#) | ⭕ |
-| **25 + 5 Clock** | Build a 25 + 5 Clock | 🌐 [Live](#) | ⭕ |
+| **Random Quote Machine** | Build a Random Quote Machine | 🌐 [Live](#) | ✅ |
+| **Markdown Previewer** | Build a Markdown Previewer | 🌐 [Live](#) | ✅ |
+| **Drum Machine** | Build a Drum Machine | 🌐 [Live](#) | ✅ |
+| **JavaScript Calculator** | Build a JavaScript Calculator | 🌐 [Live](#) | ✅ |
+| **25 + 5 Clock** | Build a 25 + 5 Clock | 🌐 [Live](#) | ✅ |
 
 ---
 
