@@ -60,7 +60,7 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 
 # Clone the repository
 ```
-git clone git@github.com:acheronx0577/JavaScript-Algorithms-and-Data-Structures.git
+git clone git@github.com:acheronx0577/Front-End-Development-Libraries-V8.git
 ```
 # Open any project folder
 ```
