@@ -1,0 +1,13 @@
+{
+  "name": "url-shortener-tui",
+  "version": "2.0.0",
+  "description": "Terminal UI URL Shortener with Sass",
+  "scripts": {
+    "sass:build": "sass scss/main.scss css/style.css",
+    "sass:watch": "sass --watch scss/main.scss css/style.css",
+    "sass:prod": "sass scss/main.scss css/style.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}

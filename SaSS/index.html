@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>URL_SHORTENER_TUI</title>
+</head>
+<body class="theme-default">
+    <div class="terminal">
+        <header class="terminal-header">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title-bar">
+                <span class="prompt">$</span>
+                <span class="title">url_shortener --tui --themes</span>
+                <span class="cursor">_</span>
+            </div>
+        </header>
+
+        <main class="terminal-body">
+            <div class="app-header">
+                <h1 class="app-title">~/tui/url_shortener ></h1>
+                <div class="status-bar">
+                    <span class="status-item">ACTIVE</span>
+                    <span class="status-item">THEME_SYSTEM</span>
+                    <span class="status-item">TUI_MODE</span>
+                </div>
+            </div>
+
+            <!-- ADD THEME SELECTOR HERE -->
+            <div class="theme-selector">
+                <button class="theme-btn active" data-theme="default">DEFAULT</button>
+                <button class="theme-btn" data-theme="matrix">MATRIX</button>
+                <button class="theme-btn" data-theme="cyberpunk">CYBERPUNK</button>
+                <button class="theme-btn" data-theme="solarized">SOLARIZED</button>
+                <button class="theme-btn" data-theme="dracula">DRACULA</button>
+                <button class="theme-btn" data-theme="monokai">MONOKAI</button>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="urlInput" class="input-label">
+                        <span class="label-text">ENTER_URL</span>
+                        <span class="label-desc">[use ↑/↓ for history • enter to submit]</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="urlInput"
+                        class="terminal-input"
+                        placeholder="https://example.com/very/long/url/path"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                </div>
+
+                <button id="shorten" class="terminal-btn">
+                    <span class="btn-text">EXECUTE_SHORTEN</span>
+                </button>
+            </div>
+
+            <div id="output" class="output-panel hide">
+                <div class="output-header">
+                    <span class="output-title">PROCESS_RESULT</span>
+                    <span class="output-status">COMPLETE</span>
+                </div>
+                <div class="output-content">
+                    <div id="result" class="result-content"></div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <div class="info-header">
+                    <span class="info-title">SYSTEM_STATISTICS</span>
+                </div>
+                <div class="info-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value" id="total-urls">0</span>
+                            <span class="stat-label">TOTAL_URLS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="active-urls">0</span>
+                            <span class="stat-label">ACTIVE_URLS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">SUCCESS_RATE</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">TUI</span>
+                            <span class="stat-label">INTERFACE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="terminal-footer">
+            <div class="footer-stats">
+                <span class="stat">THEME: <span class="highlight" id="current-theme">DEFAULT</span></span>
+                <span class="stat">URLS_SHORTENED: <span class="highlight" id="total-urls-footer">0</span></span>
+                <span class="stat">STORAGE: <span class="highlight">LOCAL</span></span>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

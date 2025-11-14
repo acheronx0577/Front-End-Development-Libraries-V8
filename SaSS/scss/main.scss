@@ -1,0 +1,14 @@
+// Main Sass file
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+// Generate theme classes
+@each $theme-name, $theme-colors in $themes {
+    .theme-#{$theme-name} {
+        @include theme($theme-name);
+
+        // Re-import components with new theme
+        @import 'components';
+    }
+}

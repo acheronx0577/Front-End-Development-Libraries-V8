@@ -1,0 +1,52 @@
+// Theme mixin to apply different themes
+@mixin theme($theme-name) {
+    $current-theme: $theme-name !global;
+}
+
+// Terminal border mixin
+@mixin terminal-border($color: theme(border-primary), $glow: false) {
+    border: 2px solid $color;
+    border-radius: 0;
+
+    @if $glow {
+        box-shadow: 0 0 20px rgba($color, 0.4);
+    }
+}
+
+// Gradient background mixin
+@mixin gradient-bg($start: theme(bg-tertiary), $end: theme(gradient-secondary)) {
+    background: linear-gradient(135deg, $start 0%, $end 100%);
+}
+
+// Button states mixin
+@mixin button-states($bg-color: theme(accent-info)) {
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($bg-color, 0.5);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+}
+
+// Text glow mixin
+@mixin text-glow($color: theme(accent-info)) {
+    text-shadow: 0 0 10px rgba($color, 0.7);
+}
+
+// Input focus mixin
+@mixin input-focus($color: theme(accent-info)) {
+    outline: none;
+    border-color: $color;
+    box-shadow: 0 0 20px rgba($color, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: theme(bg-secondary);
+}

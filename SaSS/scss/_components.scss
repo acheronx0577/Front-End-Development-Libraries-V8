@@ -1,0 +1,477 @@
+// Reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-mono;
+    background: linear-gradient(135deg, theme(bg-primary) 0%, theme(gradient-dark) 50%, theme(gradient-accent) 100%);
+    color: theme(text-primary);
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    transition: all 0.5s ease;
+}
+
+// Terminal container
+.terminal {
+    background: theme(bg-secondary);
+    @include terminal-border(theme(border-primary));
+    box-shadow: 0 0 30px rgba(theme(accent-info), 0.3);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 40px rgba(theme(accent-info), 0.4);
+    }
+}
+
+// Terminal header
+.terminal-header {
+    @include gradient-bg(theme(bg-tertiary), theme(gradient-secondary));
+    border-bottom: 2px solid theme(border-primary);
+    padding: 16px $spacing-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.window-controls {
+    display: flex;
+    gap: $spacing-sm;
+}
+
+.control {
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    display: inline-block;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.close {
+        background: theme(accent-error);
+    }
+
+    &.minimize {
+        background: theme(accent-warning);
+    }
+
+    &.maximize {
+        background: theme(accent-success);
+    }
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-weight: 600;
+}
+
+.prompt {
+    color: theme(accent-cyan);
+    font-weight: 700;
+}
+
+.title {
+    color: theme(text-primary);
+    letter-spacing: 1px;
+    font-weight: 700;
+    @include text-glow(theme(accent-info));
+}
+
+// Cursor animation
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.cursor {
+    color: theme(accent-cyan);
+    animation: blink 1.2s infinite;
+    font-weight: 700;
+}
+
+// Terminal body
+.terminal-body {
+    padding: $spacing-xl;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xl;
+    padding-bottom: $spacing-md;
+    border-bottom: 2px solid theme(border-primary);
+}
+
+.app-title {
+    color: theme(accent-cyan);
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.status-bar {
+    display: flex;
+    gap: $spacing-md;
+}
+
+.status-item {
+    background: theme(bg-tertiary);
+    padding: $spacing-xs 12px;
+    border-radius: 0;
+    font-size: 0.85em;
+    color: theme(accent-success);
+    @include terminal-border(theme(border-primary));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+// Theme selector
+.theme-selector {
+    display: flex;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+    flex-wrap: wrap;
+}
+
+.theme-btn {
+    background: theme(bg-tertiary);
+    border: 1px solid theme(border-primary);
+    border-radius: 0;
+    padding: 6px 12px;
+    color: theme(text-primary);
+    font-family: $font-mono;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: theme(accent-info);
+        color: theme(bg-primary);
+    }
+
+    &.active {
+        background: theme(accent-success);
+        color: theme(bg-primary);
+        border-color: theme(accent-success);
+    }
+}
+
+// Input section
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: $spacing-xl;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: 0.95em;
+}
+
+.label-text {
+    color: theme(accent-cyan);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.label-desc {
+    color: theme(text-dim);
+    font-size: 0.85em;
+}
+
+.terminal-input {
+    background: theme(bg-tertiary);
+    @include terminal-border(theme(border-primary));
+    padding: 14px;
+    color: theme(text-primary);
+    font-family: $font-mono;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:focus {
+        @include input-focus(theme(accent-info));
+    }
+
+    &::placeholder {
+        color: theme(text-dim);
+        opacity: 0.7;
+    }
+}
+
+.terminal-btn {
+    @include gradient-bg(theme(accent-info), theme(accent-purple));
+    @include terminal-border(theme(border-active));
+    padding: 14px 24px;
+    color: theme(text-primary);
+    font-family: $font-mono;
+    font-size: 1em;
+    cursor: pointer;
+    @include button-states(theme(accent-info));
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(theme(accent-info), 0.3);
+
+    &:hover {
+        @include gradient-bg(theme(accent-purple), theme(accent-info));
+    }
+}
+
+// Output panel
+.output-panel {
+    background: theme(bg-tertiary);
+    @include terminal-border(theme(border-primary));
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &:not(.hide) {
+        border-color: theme(accent-info);
+        box-shadow: 0 0 30px rgba(theme(accent-info), 0.3);
+    }
+}
+
+.output-header {
+    @include gradient-bg(theme(bg-secondary), theme(gradient-tertiary));
+    padding: 14px $spacing-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid theme(border-primary);
+}
+
+.output-title {
+    color: theme(text-primary);
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+.output-status {
+    color: theme(accent-success);
+    font-size: 0.85em;
+    background: rgba(theme(accent-success), 0.1);
+    padding: $spacing-xs 12px;
+    border-radius: 0;
+    @include terminal-border(theme(accent-success));
+}
+
+.output-content {
+    padding: 25px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.result-content {
+    font-family: $font-mono;
+}
+
+.url-result {
+    background: theme(bg-secondary);
+    padding: $spacing-md;
+    border-radius: 0;
+    @include terminal-border(theme(border-primary));
+    margin-bottom: $spacing-md;
+}
+
+.original-url {
+    color: theme(text-dim);
+    font-size: 0.9em;
+    word-break: break-all;
+    margin-bottom: 8px;
+}
+
+.short-url {
+    color: theme(accent-cyan);
+    font-size: 1.1em;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.copy-btn {
+    background: theme(accent-purple);
+    @include terminal-border(theme(accent-purple));
+    padding: $spacing-xs 12px;
+    color: theme(text-primary);
+    font-family: $font-mono;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+
+    &:hover {
+        background: transparent;
+        color: theme(accent-purple);
+    }
+}
+
+// Info panel
+.info-panel {
+    background: theme(bg-tertiary);
+    @include terminal-border(theme(border-primary));
+    overflow: hidden;
+}
+
+.info-header {
+    @include gradient-bg(theme(bg-secondary), theme(gradient-tertiary));
+    padding: 14px $spacing-lg;
+    border-bottom: 2px solid theme(border-primary);
+}
+
+.info-title {
+    color: theme(text-primary);
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+.info-content {
+    padding: $spacing-lg;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: $spacing-md;
+}
+
+.stat-item {
+    background: theme(bg-secondary);
+    padding: $spacing-md;
+    border-radius: 0;
+    @include terminal-border(theme(border-primary));
+    text-align: center;
+}
+
+.stat-value {
+    color: theme(accent-cyan);
+    font-size: 1.5em;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    color: theme(text-dim);
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+// Footer
+.terminal-footer {
+    @include gradient-bg(theme(bg-tertiary), theme(gradient-tertiary));
+    border-top: 2px solid theme(border-primary);
+    padding: 14px $spacing-lg;
+}
+
+.footer-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: theme(text-dim);
+}
+
+.stat {
+    font-family: $font-mono;
+}
+
+.highlight {
+    color: theme(accent-cyan);
+    font-weight: 600;
+}
+
+.hide {
+    display: none;
+}
+
+// Responsive Design
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@include mobile {
+    body {
+        padding: $spacing-sm;
+    }
+
+    .terminal-body {
+        padding: $spacing-lg;
+    }
+
+    .app-header {
+        flex-direction: column;
+        gap: $spacing-md;
+        align-items: flex-start;
+    }
+
+    .status-bar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .theme-selector {
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-stats {
+        flex-direction: column;
+        gap: $spacing-sm;
+        text-align: center;
+    }
+}
+
+// Scrollbar Styling
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: theme(bg-secondary);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: theme(accent-info);
+    border-radius: 0;
+
+    &:hover {
+        background: theme(accent-purple);
+    }
+}
