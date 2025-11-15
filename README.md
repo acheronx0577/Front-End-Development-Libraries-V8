@@ -21,21 +21,21 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 ## 📊 Course Progress
 
 | Course | Status | GitHub Repo |
-|--------|--------|-------------|-----------|
-| **Bootstrap** | ✅ 31/31 | 🔗 [Repo](https://github.com/acheronx0577/Bootstrap) |
-| **jQuery** | ✅ 18/18 | 🔗 [Repo](#) |
-| **SASS** | ✅ 0/9 | 🔗 [Repo](#) |
-| **React** | ✅ 0/47 | 🔗 [Repo](#) |
-| **Redux** | ✅ 0/17 | 🔗 [Repo](#) |
-| **React and Redux** | ✅ 0/10 | 🔗 [Repo](#) |
+|--------|--------|-------------|
+| **Bootstrap** | ✅ Completed (31/31) | 🔗 [Repo](https://github.com/acheronx0577/Bootstrap) |
+| **jQuery** | ✅ Completed (18/18) | 🔗 [Repo](https://github.com/acheronx0577/jQuery) |
+| **SASS** | 🔄 In Progress (0/9) | 🔗 [Repo](#) |
+| **React** | 🚫 Not Started (0/47) | 🔗 [Repo](#) |
+| **Redux** | 🚫 Not Started (0/17) | 🔗 [Repo](#) |
+| **React and Redux** | 🚫 Not Started (0/10) | 🔗 [Repo](#) |
 
 ---
 
 ## 🎯 Certification Projects
 
 | Project | Description | GitHub Repo | Status |
-|---------|-------------|-------------|-----------|--------|
-| **Random Quote Machine** | Build a Random Quote Machine | 🔗 [Repo](#)| ✅ Completed |
+|---------|-------------|-------------|--------|
+| **Random Quote Machine** | Build a Random Quote Machine | 🔗 [Repo](#) | ✅ Completed |
 | **Markdown Previewer** | Build a Markdown Previewer | 🔗 [Repo](#) | ✅ Completed |
 | **Drum Machine** | Build a Drum Machine | 🔗 [Repo](#) | ✅ Completed |
 | **JavaScript Calculator** | Build a JavaScript Calculator | 🔗 [Repo](#) | ✅ Completed |
