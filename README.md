@@ -24,7 +24,7 @@ This repository contains one of the portfolio projects needed to demonstrate bac
 |--------|--------|-------------|
 | **Bootstrap** | ✅ Completed (31/31) | 🔗 [Repo](https://github.com/acheronx0577/Bootstrap) |
 | **jQuery** | ✅ Completed (18/18) | 🔗 [Repo](https://github.com/acheronx0577/jQuery) |
-| **SASS** | 🔄 In Progress (0/9) | 🔗 [Repo](#) |
+| **SASS** | ✅ Completed (9/9) | 🔗 [Repo](https://github.com/acheronx0577/SaSS) |
 | **React** | 🚫 Not Started (0/47) | 🔗 [Repo](#) |
 | **Redux** | 🚫 Not Started (0/17) | 🔗 [Repo](#) |
 | **React and Redux** | 🚫 Not Started (0/10) | 🔗 [Repo](#) |
