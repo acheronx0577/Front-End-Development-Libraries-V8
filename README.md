@@ -20,7 +20,7 @@ My journey through freeCodeCamp's Front End Development Libraries certification.
 | Project | Description | GitHub Repo | Status |
 |---------|-------------|-------------|--------|
 | **Random Quote Machine** | Build a Random Quote Machine | 🔗 [Repo](#) | ✅ Completed |
-| **Markdown Previewer** | Build a Markdown Previewer | 🔗 [Repo](#) | ✅ Completed |
+| **Markdown Previewer** | Build a Markdown Previewer | 🔗 [Repo](https://github.com/acheronx0577/Build-a-Markdown-Previewer) | ✅ Completed |
 | **Drum Machine** | Build a Drum Machine | 🔗 [Repo](#) | ✅ Completed |
 | **JavaScript Calculator** | Build a JavaScript Calculator | 🔗 [Repo](#) | ✅ Completed |
 | **25 + 5 Clock** | Build a 25 + 5 Clock | 🔗 [Repo](#) | ✅ Completed |
