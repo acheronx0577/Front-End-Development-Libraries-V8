@@ -9,7 +9,7 @@ My journey through freeCodeCamp's Front End Development Libraries certification.
 | **Bootstrap** | ✅ Completed (31/31) | 🔗 [Repo](https://github.com/acheronx0577/Bootstrap) |
 | **jQuery** | ✅ Completed (18/18) | 🔗 [Repo](https://github.com/acheronx0577/jQuery) |
 | **SASS** | ✅ Completed (9/9) | 🔗 [Repo](https://github.com/acheronx0577/SaSS) |
-| **React** | ✅ Completed (9/9) | 🔗 [Repo](https://github.com/acheronx0577/React) |
+| **React** | ✅ Completed (47/47) | 🔗 [Repo](https://github.com/acheronx0577/React) |
 | **Redux** | 🚫 Not Started (0/17) | 🔗 [Repo](#) |
 | **React and Redux** | 🚫 Not Started (0/10) | 🔗 [Repo](#) |
 
