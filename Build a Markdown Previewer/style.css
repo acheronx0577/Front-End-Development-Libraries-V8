@@ -192,8 +192,15 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .cursor {
@@ -453,7 +460,8 @@ body {
   text-decoration: underline;
 }
 
-.markdown-preview ul, .markdown-preview ol {
+.markdown-preview ul,
+.markdown-preview ol {
   padding-left: 2em;
   margin: 1em 0;
 }
@@ -521,7 +529,8 @@ body {
 }
 
 /* Info Bars */
-.editor-info, .preview-info {
+.editor-info,
+.preview-info {
   background: rgba(0, 0, 0, 0.3);
   padding: 8px 15px;
   border-top: 1px solid var(--border-primary);
@@ -679,7 +688,8 @@ body {
     text-align: center;
   }
 
-  .editor-info, .preview-info {
+  .editor-info,
+  .preview-info {
     flex-wrap: wrap;
     gap: 8px;
   }

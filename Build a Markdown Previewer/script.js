@@ -9,15 +9,26 @@ class TuiMarkdownPreviewer {
 
 **This is bold text**
 *This is italic text*
-***This is bold and italic***
-~~This is strikethrough~~
 
 \`This is inline code\`
 
 [This is a link](https://example.com)
 
 > This is a blockquote
-> It can span multiple lines`;
+> It can span multiple lines
+
+\`\`\`
+// This is a code block
+function test() {
+  return "hello world";
+}
+\`\`\`
+
+- List item 1
+- List item 2
+- List item 3
+
+![FreeCodeCamp Logo](https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.svg)`;
         this.init();
     }
 
@@ -103,19 +114,6 @@ class TuiMarkdownPreviewer {
         const startTime = performance.now();
         const markdown = editor.value;
         
-        if (!markdown.trim()) {
-            preview.innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-icon">📝</div>
-                    <div class="empty-text">Markdown preview will appear here</div>
-                    <div class="empty-desc">Start typing in the editor to see live preview</div>
-                </div>
-            `;
-            previewStatus.textContent = 'EMPTY';
-            syncStatus.textContent = 'LIVE';
-            return;
-        }
-
         try {
             const html = marked.parse(markdown);
             preview.innerHTML = html;
@@ -127,13 +125,7 @@ class TuiMarkdownPreviewer {
             
             this.updatePreviewStats();
         } catch (error) {
-            preview.innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-icon">❌</div>
-                    <div class="empty-text">Error rendering markdown</div>
-                    <div class="empty-desc">${error.message}</div>
-                </div>
-            `;
+            preview.innerHTML = `<div style="color: var(--accent-error); padding: 20px;">Error rendering markdown: ${error.message}</div>`;
             previewStatus.textContent = 'ERROR';
             syncStatus.textContent = 'ERROR';
             this.logToConsole(`Render error: ${error.message}`, 'error');
