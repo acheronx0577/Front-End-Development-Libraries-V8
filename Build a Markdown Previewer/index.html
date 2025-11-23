@@ -1,0 +1,193 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKDOWN_PREVIEWER_TUI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="theme-default">
+    <div class="terminal">
+        <header class="terminal-header">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title-bar">
+                <span class="prompt">$</span>
+                <span class="title">markdown_previewer --tui --live</span>
+                <span class="cursor">_</span>
+            </div>
+            <div class="header-stats">
+                <span class="header-stat">[v1.2.0]</span>
+                <span class="header-stat">[GFM]</span>
+            </div>
+        </header>
+
+        <main class="terminal-body">
+            <!-- Console Output -->
+            <div class="console-output" id="console-output">
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="command">system_init --markdown_tui</span>
+                </div>
+                <div class="console-line">
+                    <span class="output-text">MARKDOWN_PREVIEWER_TUI v1.2.0 LOADED</span>
+                </div>
+                <div class="console-line">
+                    <span class="output-text">PARSER: MARKED.JS [GFM_ENABLED]</span>
+                </div>
+                <div class="console-line">
+                    <span class="output-text">MODE: LIVE_PREVIEW [SYNCHRONIZED]</span>
+                </div>
+                <div class="console-line">
+                    <span class="output-text">STATUS: AWAITING_MARKDOWN_INPUT</span>
+                </div>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="theme-section">
+                <div class="section-header">
+                    <span class="prompt">$</span>
+                    <span class="section-title">THEME_SELECTOR</span>
+                </div>
+                <div class="theme-grid">
+                    <button class="theme-option active" data-theme="default">
+                        <span class="theme-preview" style="background: linear-gradient(135deg, #0a1929 0%, #132f4c 100%);"></span>
+                        <span class="theme-name">DEFAULT</span>
+                    </button>
+                    <button class="theme-option" data-theme="matrix">
+                        <span class="theme-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #001100 100%);"></span>
+                        <span class="theme-name">MATRIX</span>
+                    </button>
+                    <button class="theme-option" data-theme="cyberpunk">
+                        <span class="theme-preview" style="background: linear-gradient(135deg, #1a0b2e 0%, #2d1b69 100%);"></span>
+                        <span class="theme-name">CYBERPUNK</span>
+                    </button>
+                    <button class="theme-option" data-theme="solarized">
+                        <span class="theme-preview" style="background: linear-gradient(135deg, #002b36 0%, #073642 100%);"></span>
+                        <span class="theme-name">SOLARIZED</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Editor and Preview Panels -->
+            <div class="panels-container">
+                <!-- Editor Panel -->
+                <div class="panel editor-panel">
+                    <div class="panel-header">
+                        <span class="prompt">></span>
+                        <span class="panel-title">EDITOR [MARKDOWN]</span>
+                        <span class="panel-status" id="editor-status">READY</span>
+                    </div>
+                    <div class="panel-content">
+                        <textarea id="editor" class="markdown-editor" placeholder="# Welcome to Markdown TUI&#10;&#10;Start typing your markdown here...&#10;&#10;- Lists&#10;- **Bold** and *italic*&#10;- `code` and ```blocks```&#10;- [Links](https://example.com)"></textarea>
+                        <div class="editor-info">
+                            <span class="info-item">LINES: <span id="line-count">1</span></span>
+                            <span class="info-item">CHARS: <span id="char-count">0</span></span>
+                            <span class="info-item">SYNC: <span id="sync-status">LIVE</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="panel preview-panel">
+                    <div class="panel-header">
+                        <span class="prompt">></span>
+                        <span class="panel-title">PREVIEW [RENDERED]</span>
+                        <span class="panel-status" id="preview-status">EMPTY</span>
+                    </div>
+                    <div class="panel-content">
+                        <div id="preview" class="markdown-preview">
+                            <div class="empty-state">
+                                <div class="empty-icon">📝</div>
+                                <div class="empty-text">Markdown preview will appear here</div>
+                                <div class="empty-desc">Start typing in the editor to see live preview</div>
+                            </div>
+                        </div>
+                        <div class="preview-info">
+                            <span class="info-item">ELEMENTS: <span id="element-count">0</span></span>
+                            <span class="info-item">WORDS: <span id="word-count">0</span></span>
+                            <span class="info-item">RENDER: <span id="render-time">0ms</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Reference -->
+            <div class="reference-section">
+                <div class="section-header">
+                    <span class="prompt">$</span>
+                    <span class="section-title">MARKDOWN_REFERENCE</span>
+                </div>
+                <div class="reference-grid">
+                    <div class="ref-item">
+                        <code># H1</code>
+                        <span>Heading 1</span>
+                    </div>
+                    <div class="ref-item">
+                        <code>**bold**</code>
+                        <span>Bold Text</span>
+                    </div>
+                    <div class="ref-item">
+                        <code>*italic*</code>
+                        <span>Italic Text</span>
+                    </div>
+                    <div class="ref-item">
+                        <code>`code`</code>
+                        <span>Inline Code</span>
+                    </div>
+                    <div class="ref-item">
+                        <code>[link](url)</code>
+                        <span>Hyperlink</span>
+                    </div>
+                    <div class="ref-item">
+                        <code>- item</code>
+                        <span>List Item</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="section-header">
+                    <span class="prompt">$</span>
+                    <span class="section-title">DOCUMENT_STATISTICS</span>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-lines">1</div>
+                        <div class="stat-label">TOTAL_LINES</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-words">0</div>
+                        <div class="stat-label">WORDS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-chars">0</div>
+                        <div class="stat-label">CHARACTERS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="heading-count">0</div>
+                        <div class="stat-label">HEADINGS</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="terminal-footer">
+            <div class="footer-content">
+                <span class="footer-item">[MARKED.JS]</span>
+                <span class="footer-item">[THEME: <span id="footer-theme">DEFAULT</span>]</span>
+                <span class="footer-item">[LIVE_PREVIEW]</span>
+                <span class="footer-item">[v1.2.0]</span>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
